@@ -50,3 +50,14 @@ def test_calendar_sync():
     result = test.ingest_calendar_data(events)
     assert result == True
     logger.info("Calendar sync test passed")
+
+# Additional logging for improved debugging
+def log_request_details(method, url, headers=None):
+    """Log HTTP request details for debugging."""
+    logger.debug(f"Request: {method} {url}")
+    if headers:
+        logger.debug(f"Headers: {headers}")
+
+def log_response_details(status_code, response_time):
+    """Log HTTP response details."""
+    logger.debug(f"Response: Status {status_code}, Time: {response_time}ms")
